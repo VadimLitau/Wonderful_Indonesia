@@ -22,12 +22,23 @@ a {
     text-decoration none
 
     &:visited {
-        color darken($main_highlite, 10)
+        // color darken($main_highlite, 10)
+         color $main_highlite
     }
 
     &:hover,
     &:active {
         opacity: 0.7
+    }
+}
+
+.content {
+    padding 0 $main_shift $main_shift
+    max-width 1460px
+    margin 0 auto
+
+    p {
+        margin-bottom 1.3rem
     }
 }
 
@@ -106,7 +117,7 @@ a {
         border-radius 5px
 
         &::placeholder {
-        color $main_lite 
+            color $main_lite 
          }
 
         &:focus{
@@ -120,5 +131,224 @@ a {
             }
         }
     }  
+}
 
+.section__main {
+    display flex
+    align-items center
+    flex-direction column
+    position absolute
+    left $main_shift
+    right $main_shift
+    top 14vw
+}
+
+.main-title{
+    font-size 1rem
+    margin-bottom: 6.2rem
+
+    &__summary {
+        font-weight 700
+        color darken($main_highlite, 20)
+        text-transform uppercase
+        letter-spacing .34em;
+        display flex
+        align-items center
+        margin-bottom 1.5em
+    
+
+    &::before{
+        content '' 
+        display block
+        width 4em
+        height 3px
+        margin-right 1.5em
+        background darken($main_highlite, 20)
+    }
+    }
+
+    &__text {
+        font-size 5.4em
+        font-weight 700
+        line-height 1.1
+
+        &_regular {
+            display block
+            font-size 0.9em
+            font-weight 400
+        }
+    }
+}
+
+.main-title_small {
+    font-size 1rem
+    margin-bottom 1.8em
+
+    .main-title__summary {
+        color $main_highlite    
+
+        &::before{
+            background $main_highlite 
+        }
+    }
+
+    .main-title__text {
+        font-size 3.4rem
+        line-height 1.4
+    }
+}
+
+.social-networks {
+    position absolute
+    left 0
+    top 4rem
+    display flex
+    flex-direction column
+    algn-items center
+
+    &__title {
+        writing-mode: vertical-rl
+        margin-bottom 1.3rem
+    }
+
+    &__item{
+        margin-bottom 1rem
+    }
+
+    &__link {
+        opacity 1
+        transition opacity 0.3s
+
+        &:hover {
+            opacity 0.7
+        }
+    }
+}
+
+.scroll-down {
+    display flex
+    cursor pointer
+    opacity 1
+    transition 0.3
+
+    &:hover {
+        opacity 0.7
+    }
+
+    &__icon {
+        margin 0.2em 0 0 0.5em
+    }
+}
+
+.section-cols {
+    display flex
+    justify-content space-between
+    align-items center
+}
+
+.section-col {
+    &:first-child {
+        width 40%
+    }
+
+    &:last-child {
+        width 44%
+    }
+
+    &__image {
+        width 100%
+    }
+}
+
+.arrow-link {
+    display flex
+    align-items center
+
+    &__icon {
+        margin 0.1rem 0 0 0.4rem
+    }
+}
+
+/*Icons*/
+.icon__instagram {
+    width 1.3rem
+    height 1.3rem
+    background url('/images/icons/instagram.svg') no-repeat center center
+    background-size contain
+}
+
+.icon__facebook {
+    width 1.3rem
+    height 1.3rem
+    background url('/images/icons/facebook.svg') no-repeat center center
+    background-size contain
+}
+
+.icon__twitter {
+    width 1.3rem
+    height 1.3rem
+    background url('/images/icons/twitter.svg') no-repeat center center
+    background-size contain
+}
+
+.icon__arrow_downward {
+    width 1rem
+    height 1.4rem
+    background url('/images/icons/arrow_downward.svg') no-repeat center center
+    background-size contain
+}
+
+.icon__arrow_rightward {
+    width 1.6rem
+    height 1.1rem
+    background url('/images/icons/arrow_rightward.svg') no-repeat center center
+    background-size contain
+}
+
+/*Media*/
+
+@media screen and (max-width 1790px) {
+    html,
+    body {
+        font-size 16px
+    }
+
+    .section-col {
+        &:first-child {
+            width 40%
+        }
+
+        &:last-child {
+            width 50%
+        }
+    }
+
+    .content {
+        max-width 1200px
+    }
+}
+
+@media screen and (max-width 1550px) {
+    html,
+    body {
+        font-size 14px
+    }
+}
+
+@media screen and (max-width 1380px) {
+    .section-col {
+        &:first-child {
+            width 43%
+        }
+
+        &:last-child {
+            width 50%
+        }
+    }
+}
+
+@media screen and (max-width 1310px) {
+   .main-title {
+    font-size 0.9rem;
+   }
 }
