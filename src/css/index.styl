@@ -2,7 +2,9 @@ $main_dark = #000
 $main_lite = #fff
 $main_highlite = #FBD784
 $main_buttons = #FFA343
-$main_shift = 4.7rem;
+$main_shift = 4.7rem
+$main_border = rgba($main_lite, 30%)
+$border_radius = 0.44em
 
 html,
 body {
@@ -248,6 +250,26 @@ a {
     }
 }
 
+.social-horisontal {
+    display flex
+    font-size 1.3rem
+
+    &__item {
+        display inline-block
+        margin-left 2rem
+    }
+
+    &__link {
+        display inline-block
+        opacity 1
+        transition opacity 0.7
+
+        &:hover {
+            opacity 0.7
+        }
+    }
+}
+
 .scroll-down {
     display flex
     cursor pointer
@@ -283,6 +305,12 @@ a {
     }
 }
 
+.section-border {
+    padding-bottom 3rem
+    border-bottom 1px solid $main_border
+    margin-bottom 3rem
+}
+
 .arrow-link {
     display flex
     align-items center
@@ -316,42 +344,188 @@ a {
     }
 }
 
+.button {
+    border none
+    background $main_buttons
+    font 700 0.9rem/1 'Open Sans', sans-serif
+    padding 1.6em 4.5em 1.4rem
+    border-radius $border_radius
+    cursor pointer
+    transition background 0.3s
+
+    &:hover {
+        background $main_highlite
+    }
+}
+
+
+.start {
+    display flex
+    align-items center
+    justify-content space-between
+
+    &__title {
+        font-size 2.66rem
+        font-weight 700
+        margin-right 3rem
+    }
+
+    &__desc {
+        font-size 1.22rem
+        margin-right 3rem
+    }
+
+    &__content {
+        display flex
+        align-items baseline
+    }
+}
+
+/*Footer*/
+.subscribe {
+    width 27%
+
+    &__title {
+        font-size 2rem
+        font-weight bold
+        line-height 1.4
+        margin-bottom 1.38em
+    }
+}
+.footer {
+    &__content {
+        display flex
+        justify-content space-between
+        margin-bottom 7rem
+    }
+
+    &__bottom {
+        display flex
+        justify-content space-between
+        padding 0 2.22rem
+    }
+
+
+    &__link {
+        color $main_lite
+        font-size 0.83rem
+        display inline-block
+        margin-right 4.5rem
+
+        &:hover,
+        &:visited,
+        &:active {
+            color $main_lite
+        }
+    }
+
+    &:last-child {
+        margin-right 0
+    }
+}
+
+.email {
+    width: 100%
+    display grid
+    grid-template-columns 1fr auto
+    border-bottom 1px solid $main_border
+
+    &__form {
+        background none
+        border none
+        font 0.83rem/1 'Open Sans'. sans-serif
+        padding 1.1rem 0.77rem 1.77rem
+        border-radius 5px
+
+        &:placeholder {
+            opacity 1
+        }
+
+        &:focus {
+            border: none
+            outline none
+        color $main_lite
+        }
+    }
+
+    &__button {
+        position relative
+        padding 0
+        height 3.3rem
+        width 3.55rem
+        border-radius $border_radius $border_radius 0 0
+        display flex
+        align-items center
+        justify-content center
+
+    }
+}
+
+.menu {
+    &__title {
+        color: $main_highlite
+        font-weight 700
+        font-size 1.1rem
+        margin-bottom 0.6em
+    }
+
+    &__item {
+        margin-bottom 0.8rem
+    }
+
+    &__link {
+        color $main_lite
+        text-decoration none
+
+        &:hover,
+        &:visited,
+        &:active {
+            color $main_lite
+        }
+    }
+}
 /*Icons*/
 .icon__instagram {
-    width 1.3rem
-    height 1.3rem
+    width 1.3em
+    height 1.3em
     background url('/images/icons/instagram.svg') no-repeat center center
     background-size contain
 }
 
 .icon__facebook {
-    width 1.3rem
-    height 1.3rem
+    width 1.3em
+    height 1.3em
     background url('/images/icons/facebook.svg') no-repeat center center
     background-size contain
 }
 
 .icon__twitter {
-    width 1.3rem
-    height 1.3rem
+    width 1.3em
+    height 1.3em
     background url('/images/icons/twitter.svg') no-repeat center center
     background-size contain
 }
 
 .icon__arrow_downward {
-    width 1rem
-    height 1.4rem
+    width 1em
+    height 1.4em
     background url('/images/icons/arrow_downward.svg') no-repeat center center
     background-size contain
 }
 
 .icon__arrow_rightward {
-    width 1.6rem
-    height 1.1rem
+    width 1.6em
+    height 1.1em
     background url('/images/icons/arrow_rightward.svg') no-repeat center center
     background-size contain
 }
 
+.icon__right {
+    width 1.5rem
+    height 1.5rem
+    background url('/images/icons/arrow_right.svg') no-repeat center center
+    background-size contain
+}
 /*Media*/
 
 @media screen and (max-width 1790px) {
